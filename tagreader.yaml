@@ -193,7 +193,7 @@ pn532_i2c:
             red: 0%
             green: 100%
             blue: 0%
-            flash_length: 500ms
+            flash_length: 1000ms
 
 # Define the buzzer output
 output:
