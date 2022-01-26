@@ -108,8 +108,6 @@ api:
         message->add_uri_record(uri);
         ESP_LOGD("tagreader", "Writing payload: %s", uri.c_str());
         id(pn532_board).write_mode(message);
-
-
   - service: write_tag_id
     variables:
       tag_id: string
@@ -193,7 +191,7 @@ pn532_i2c:
             red: 0%
             green: 100%
             blue: 0%
-            flash_length: 1000ms
+            flash_length: 500ms
 
 # Define the buzzer output
 output:
@@ -231,10 +229,9 @@ light:
 - platform: fastled_clockless
   chipset: WS2812
   pin: D8
-  num_leds: 2
+  num_leds: 1
   flash_transition_length: 500ms
   rgb_order: GRB
   id: activity_led
   name: "${friendly_name} LED"
   restore_mode: ALWAYS_OFF
-  
